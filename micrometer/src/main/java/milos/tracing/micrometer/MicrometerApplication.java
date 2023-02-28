@@ -31,7 +31,7 @@ public class MicrometerApplication {
  * The type Employee controller.
  */
 @RestController
-class EmployeeController {
+class DemoController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     /**
