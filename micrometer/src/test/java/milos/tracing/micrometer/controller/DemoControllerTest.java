@@ -37,6 +37,11 @@ public class DemoControllerTest {
                 .header("X-B3-TraceId", traceId)
                 .header("X-B3-SpanId", spanId);
 
+        /*
+        * Expected: a string containing "4f5e6d7c8b9a0f1e"
+        *        but: was "{traceId=66275a023f6eccfc, spanId=66275a023f6eccfc}"
+        * with spring sleuth and spring boot 2 was: {traceId=66275a023f6eccfc, spanId=4f5e6d7c8b9a0f1e}
+        * */
         // perform the request and verify the response
         mockMvc.perform(requestBuilder)
                 .andExpect(status().isOk())
